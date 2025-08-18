@@ -1,0 +1,73 @@
+name: fai_assistant
+description: A new Flutter project.
+publish_to: none
+version: 1.0.0+5
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  pdf: ^3.11.0
+  printing: ^5.12.0
+  intl: ^0.19.0
+  firebase_core: ^2.27.0
+  cloud_firestore: ^4.15.5
+  file_picker:
+    git:
+      url: https://github.com/miguelpruivo/flutter_file_picker.git
+      ref: master
+  permission_handler: ^11.0.1
+  flutter_pdfview: ^1.2.7
+  path_provider: ^2.1.3
+  cupertino_icons: ^1.0.8
+  url_launcher: any
+  shared_preferences: ^2.2.2
+  http: ^0.13.6
+  flutter_linkify: ^6.0.0
+  uuid: ^4.4.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.3
+  flutter_launcher_icons: ^0.13.1
+  flutter_native_splash: ^2.2.6
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/fai_assistant_app_icon.png
+    - assets/images/mrm_icon.png
+    - assets/images/ai_icon.png
+    - assets/images/trig.png
+    - assets/images/splash_icon.png
+    - assets/images/splash.png
+    - assets/images/app_icon.png
+    - assets/images/icon_foreground.png
+    - assets/fonts/DejaVuSans.ttf
+    - assets/fonts/DejaVuSans-Bold.ttf
+    - assets/fonts/NotoSansSymbols2-Regular.ttf
+
+# ⬇️ THIS SHOULD BE OUTSIDE 'flutter:' SECTION
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: assets/images/icon_foreground.png  # Fallback for older devices
+  image_path_ios: assets/images/app_icon.png
+  remove_alpha_ios: true
+  adaptive_icon_foreground: assets/images/icon_foreground.png
+  adaptive_icon_background: "#3F51B5"
+
+# ⬇️ ALSO OUTSIDE 'flutter:' SECTION
+flutter_native_splash:
+  color: "#3F51B5"
+  image: assets/images/splash_icon.png
+  fullscreen: true  #force image to stretch
+  android: true
+  ios: true
+  android_12:
+    image: assets/images/splash_icon.png
+    icon_background_color: "#3F51B5"

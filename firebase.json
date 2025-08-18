@@ -1,0 +1,1 @@
+{"flutter":{"platforms":{"android":{"default":{"projectId":"fai-assistant","appId":"1:434057576933:android:35bc625f59fab4978eef0c","fileOutput":"android/app/google-services.json"}},"dart":{"lib/firebase_options.dart":{"projectId":"fai-assistant","configurations":{"android":"1:434057576933:android:35bc625f59fab4978eef0c","ios":"1:434057576933:ios:e4263b31f52b4cb98eef0c"}}}}}}

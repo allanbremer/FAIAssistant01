@@ -1,0 +1,222 @@
+    'Form3_Field1': '''
+This FAI Part Number is a required input. This number must always be the same in Field 1 on Forms 1, 2, and 3. It is a unique identifier assigned to the FAI part. It ties the inspection results to the specific component on the drawing or parts list.
+
+Examples:
+PN-123456
+123-4567-REV-B
+ABX998
+623Q1R3434-302
+
+The drawing number could be different than the part number so be careful. Also, if you make a change to the
+drawing number on one of the forms, then you have to change it on all the others (1, 2, and 3).
+
+The part number doesn't necessarily have to have the Rev. number included with it. Actually, AS9102 doesn't say
+anything about the revision number going along with the part number.
+''',
+
+    'Form3_Field2': '''
+This field should show the exact name of the FAI part with nothing left out. It should match the PO and most
+likely many other documents like the Bill of Sale and the name of the part as shown in the engineering documentation. This is another one of those mandatory fields and should not be abbreviated or shortened. Also,
+most of the time this part name is should be in capital letters.
+
+Examples:
+LG HOUSING
+GASKET
+BRACKET, ANGLE
+
+As a reviewer, if you notice that the part name in field 1 on any of the forms is shorter than the
+parts list or the PO then that is cause for a rejection. Also, if you change or edit the part name, be sure
+it's the same across all 3 forms.
+''',
+
+    'Form3_Field3': '''
+The serial number uniquely identifies the individual FAI part that was inspected. This input is considered
+a 'Conditionally Required' one because many times the FAI part doesn't need to have one. One common example is
+when a part is 'Fracture Critical' or possibly another type of critical part. Be sure to carefully read the
+PO and the parts list to see if you see those designations.
+
+This serial number is also important on the part marking of critical parts, be sure to read the appropriate specification about the part marking because the serial number sometimes has to be marked on the part.
+
+The serial number can be on any part, a detail, an assembly, or a sub-assembly. Some companies require a photo
+of the part or a stamping on the traveler of the serial number for verification that it was done. And one more
+thing, if there is a change or your editing in the forms, be sure this serial number is on all 3 Forms in Field
+3.
+''',
+
+    'Form3_Field4': '''
+This is the identification number of the First Article Inspection Report (FAIR) itself. Most people just call
+it 'The FAI number'. This is a required field within AS9102 so it needs to be there, no 'N/A' either. For
+the most part, the number is almost always a 4 digit number and you'll rarely see FAI numbers with alphanumeric
+characters. This field cannot be left blank.
+
+Examples:
+1423
+13055
+    'Form3_Field5': '''
+MEANING:
+A sequential number that uniquely identifies each inspection characteristic on Form 3.
+
+WHAT THIS FIELD IS ASKING:
+What number is used to refer to this specific characteristic entry?
+
+EXAMPLES OF VALID INPUT:
+- 1
+- 15
+- 102
+
+COMMON MISTAKES (Avoid these):
+- Skipping numbers
+- Duplicating numbers
+- Misaligning numbers with bubble drawing
+
+TIPS:
+Match each number to a bubble number on the drawing for clarity.
+''',
+
+    'Form3_Field6': '''
+MEANING:
+The sheet and zone or view on the engineering drawing where the characteristic can be found.
+
+WHAT THIS FIELD IS ASKING:
+Where on the drawing is this characteristic located?
+
+EXAMPLES OF VALID INPUT:
+- Sheet 1, Zone B3
+- Detail A
+- Zone C4
+
+COMMON MISTAKES (Avoid these):
+- Not including zone
+- Wrong sheet number
+- Leaving field empty
+
+TIPS:
+Use the zone grid on the drawing and double-check for accuracy.
+''',
+
+    'Form3_Field7': '''
+MEANING:
+Indicates whether the characteristic is Key (K), Critical (C), or Safety (S).
+
+WHAT THIS FIELD IS ASKING:
+Is this a key or safety-critical characteristic?
+
+EXAMPLES OF VALID INPUT:
+- KPC
+- C
+- S
+
+COMMON MISTAKES (Avoid these):
+- Leaving blank when required
+- Using undefined designators
+- Confusing with characteristic type
+
+TIPS:
+Refer to drawing symbols/legend for correct identification. Only use if specifically called out.
+''',
+
+    'Form3_Field8': '''
+MEANING:
+This field specifies the dimensional or test requirement from the drawing or specification.
+
+WHAT THIS FIELD IS ASKING:
+What is the exact specification that the measured result must meet?
+
+EXAMPLES OF VALID INPUT:
+- Ø0.250 ±0.005
+- Surface Finish 32 Ra
+- True Position Ø0.2 MMC
+
+COMMON MISTAKES (Avoid these):
+- Incorrect tolerance
+- Using nominal without limits
+- Leaving out geometric control symbols
+
+TIPS:
+Copy exactly from the drawing including all tolerances and units.
+''',
+
+    'Form3_Field9': '''
+MEANING:
+The actual measurement or observed result from inspection.
+
+WHAT THIS FIELD IS ASKING:
+What is the result of the measurement or test?
+
+EXAMPLES OF VALID INPUT:
+- 0.248
+- Surface Finish = 29 Ra
+- TP = 0.15
+
+COMMON MISTAKES (Avoid these):
+- Only writing 'Pass'
+- Rounding too early
+- Units missing
+
+TIPS:
+Use calibrated instruments. Record actual numeric results.
+''',
+
+    'Form3_Field10': '''
+MEANING:
+This indicates whether special tooling was required and used for inspection.
+
+WHAT THIS FIELD IS ASKING:
+Was designed or qualified tooling used to inspect this feature?
+
+EXAMPLES OF VALID INPUT:
+- Yes - Fixture ID 002
+- No
+- Gage #157
+
+COMMON MISTAKES (Avoid these):
+- Always putting 'No' without checking
+- Missing tooling ID
+- Saying 'Yes' without reference
+
+TIPS:
+Refer to planning documents or control plan to verify if special tooling was used.
+''',
+
+    'Form3_Field11': '''
+MEANING:
+If the characteristic does not meet the requirement, this is the tracking number for the nonconformance report.
+
+WHAT THIS FIELD IS ASKING:
+Was there a nonconformance? If so, what is the tracking number?
+
+EXAMPLES OF VALID INPUT:
+- NC-8456
+- QDR-0042
+- MRB-2025-18
+
+COMMON MISTAKES (Avoid these):
+- Entering 'No' or 'None'
+- Leaving blank when there's a rejection
+- Untraceable number
+
+TIPS:
+Only use if the result does not conform. Reference the actual NCR or MRB document.
+''',
+
+    'Form3_Field12': '''
+MEANING:
+Optional space for relevant notes such as environmental conditions, inspection notes, or clarifications.
+
+WHAT THIS FIELD IS ASKING:
+Is there any other information relevant to this inspection result?
+
+EXAMPLES OF VALID INPUT:
+- Measured at 23°C
+- Verified by alternate method
+- Inspected on 2nd shift
+
+COMMON MISTAKES (Avoid these):
+- Overloading with unrelated info
+- Blank when clarification is useful
+- Acronyms with no explanation
+
+TIPS:
+Use this field to clarify anything that could raise questions during review.
+''',
+

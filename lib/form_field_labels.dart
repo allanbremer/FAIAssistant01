@@ -1,0 +1,66 @@
+// GENERATED FILE: Contains all field labels for Forms 1, 2, and 3
+class FormFieldLabels {
+  static const Map<String, Map<int, String>> labels = {
+    'Form 1': {
+      1: 'Field 1 – Part Number',
+      2: 'Field 2 – Part Name',
+      3: 'Field 3 – Serial Number',
+      4: 'Field 4 – FAIR Identifier',
+      5: 'Field 5 – Part Revision Level',
+      6: 'Field 6 – Drawing Number',
+      7: 'Field 7 – Drawing Revision Level',
+      8: 'Field 8 – Additional Changes',
+      9: 'Field 9 – Manufacturing Process Reference',
+      10: 'Field 10 – Organization Name',
+      11: 'Field 11 – Supplier Code',
+      12: 'Field 12 – PO Number',
+      13: 'Field 13 – Detail or Assembly FAI',
+      14: 'Field 14 – Full or Partial FAI',
+      15: 'Field 15 - Part Number',
+      16: 'Field 16 - Part Name',
+      17: 'Field 17 – Part Type',
+      18: 'Field 18 – FAIR Identifier',
+      19: 'Field 19 – Documented Nonconformance',
+      20: 'Field 20 – FAIR Verified By',
+      21: 'Field 21 – Date',
+      22: 'Field 22 – Reviewed/Approved By',
+      23: 'Field 23 – Date',
+      24: 'Field 24 – Customer Approval',
+      25: 'Field 25 – Date',
+      26: 'Field 26 – Comments',
+    },
+    'Form 2': {
+      1: 'Field 1 – Part Number',
+      2: 'Field 2 – Part Name',
+      3: 'Field 3 – Serial Number',
+      4: 'Field 4 – FAIR Identifier',
+      5: 'Field 5 – Material or Process Name',
+      6: 'Field 6 – Specification Number',
+      7: 'Field 7 – Code',
+      8: 'Field 8 – Supplier',
+      9: 'Field 9 – Customer Approval Verification',
+      10: 'Field 10 – Certificate of Conformance Number',
+      11: 'Field 11 – Functional Test Procedure',
+      12: 'Field 12 – Acceptance Report Number',
+      13: 'Field 13 – Comments',
+    },
+    'Form 3': {
+      1: 'Field 1 – Part Number',
+      2: 'Field 2 – Part Name',
+      3: 'Field 3 – Serial Number',
+      4: 'Field 4 – FAIR Identifier',
+      5: 'Field 5 – Char. No.',
+      6: 'Field 6 – Reference Location',
+      7: 'Field 7 – Characteristic Designator',
+      8: 'Field 8 – Requirement',
+      9: 'Field 9 – Results',
+      10: 'Field 10 – Designed/Qualified Tooling',
+      11: 'Field 11 – Nonconformance Number',
+      12: 'Field 12 – Additional Data/Comments',
+    },
+  };
+
+  static String getLabel(String formName, int fieldNumber) {
+    return labels[formName]?[fieldNumber] ?? 'Field \$fieldNumber';
+  }
+}

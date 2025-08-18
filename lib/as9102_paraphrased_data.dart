@@ -1,0 +1,517 @@
+class AS9102ParaphrasedData {
+  static Map<String, String> content = {
+
+// These 'Form1_Field1' labels get their description from: form_field_labels.dart
+
+    'Form1_Field1': '''
+This FAI Part Number is a required input. This number must always be the same in Field 1 on Forms 1, 2, and 3. It is a unique identifier assigned to the FAI part. It ties the inspection results to the specific component on the drawing or parts list.
+
+Examples:
+123456
+123-4567-REV-B
+ABX998
+623Q1R3434-302
+
+The drawing number could be different than the part number so be careful. Also, if you make a change to the drawing number on one of the forms, then you have to change it on all the others (1, 2, and 3).
+''',
+
+    'Form1_Field2': '''
+This field should show the exact name of the FAI part with nothing left out.It should match the PO and most likely many other documents like the Bill of Sale and the name of the part as shown in the engineering documentation. This is another one of those mandatory fields and should not be abbreviated or shortened. Also, most of the time this part name should be in capital letters.
+
+Examples:
+LG HOUSING
+GASKET
+BRACKET, ANGLE
+
+As a reviewer, if you notice that the part name in field 1 on any of the forms is not the same as the parts list or the PO then that is cause for a rejection. Also, if you change or edit the part name, be sure it's the same across all 3 forms.
+''',
+
+    'Form1_Field3': '''
+The serial number uniquely identifies the individual FAI part that was inspected. This input is considered a 'Conditionally Required' one because many times the FAI part doesn't need to have one. One example of when the serial number is a requirement is when the part is 'Fracture Critical Traceable' or possibly another type of critical part. Be sure to carefully read the PO and the parts list to see if you see those designations.
+
+This serial number is also important on the part marking of critical parts, be sure to read the appropriate specification about the part marking because the serial number sometimes has to be marked on the part.
+
+The serial number can be on any part, a detail, an assembly, or a sub-assembly. Some companies require a photo of the part or a stamping on the traveler of the serial number for verification that it was done. And one more thing, if there is a change or your editing in the forms, be sure this serial number is on all 3 Forms in Field 3.
+''',
+
+    'Form1_Field4': '''
+This is the identification number of the First Article Inspection Report (FAIR) itself. Most people just call it 'The FAI number'. This is a required field within AS9102 so it needs to be there, no 'N/A' either.
+
+For the most part, the number is almost always a 4 digit number and you'll rarely see FAI numbers with alphanumeric characters. This field cannot be left blank. This is one of those inputs that reside on all 3 forms in field 4 so if you end up changing it on one form then make sure you change it on the other 2.
+
+Examples:
+1423
+13055
+4021
+''',
+
+    'Form1_Field5': '''
+This is the latest revision level of the part that your doing the FAI on. The revision level should mainly come from the parts list, it may not always be listed on the purchase order.
+
+This is a conditionally required field because there may not be a revision level, some organizations don't use one. If there is no revision level then the best thing to do is to put 'N/C' (no change) in this field. Some parts are not controlled by a revision level. 
+
+Examples:
+002
+REV B
+D
+REV_J
+N/C
+N/A
+
+You should also double check the purchase order, drawing, and other documentation to ensure the part revision level matches across all records.
+
+What is the difference between a part revision and a drawing revision? Part revisions and drawing revisions track changes, but to different aspects of a product. A part revision keeps track of changes to the physical part itself, whereas a drawing revision keeps track of the drawing changes. The part revision shows a change of form, fit, or function, while a drawing revision shows a change to the 2D representation of the part.
+''',
+
+    'Form1_Field6': '''
+Put the basic drawing number into this field, but if it's a model then the model file name with the file name extension goes here. The file should be named by way of the part number, then the dash number, then the revision, and then the filename extension. There can be more than one drawing in this field because some parts need more than one drawing in order to present all the design characteristics of the part.
+
+The drawing number is a key element used to support traceability, validation, or compliance in the FAI documentation process. Provide the drawing number as it appears on the engineering drawing, part documentation, or referenced specifications. This is a conditionally required field according to AS9102 and therefore it can be left blank when not applicable but, it would be highly unlikely to have this field left blank or filled in with 'N/A'. It would be well to check with your organization before leaving the drawing number field left blank or with an 'N/A'.
+
+Examples:
+645-999-101-037
+522T6P1123-908_002-sdsup.stp
+P05567-2234-6.CATPart
+371286A0231
+
+Be sure to double check against the purchase order, drawing, and internal documentation to ensure the drawing number matches across all records.
+''',
+
+    'Form1_Field7': '''
+This is the revision level of the drawing or the DPD (digital product definition) of the FAI part. There may have to be more than one drawing revision listed in this field because some parts need more than one drawing in order to present all the design characteristics of the part but it's pretty uncommon to see more than one revision level here.
+
+The drawing revision level is a key element used to support traceability, validation, or compliance in the FAI documentation process. Be sure to provide the drawing revision level as it is shown on the engineering drawing.
+
+Double check against purchase order, drawing, and internal documentation to make sure the drawing revision level matches across all records. This field is conditionally required so it is possible to not need it.
+
+Question: What is the difference between a part revision and a drawing revision? Part revisions and drawing revisions track changes, but to different aspects of a product. A part revision keeps track of changes to the physical part itself, whereas a drawing revision keeps track of the drawing changes. The part revision shows a change of form, fit, or function, while a drawing revision shows a change to the 2D representation of the part.
+
+Examples:
+NC
+001
+Rev. A
+DWG REV D
+H
+'N/A'
+''',
+
+    'Form1_Field8': '''
+Provide the Additional Changes as it appears on the engineering drawing, part documentation, or referenced specifications. Additional Changes are a key element used to support traceability, validation, or compliance in the FAI documentation process. This is where you would put the parts list, the SSP (Supplier Specification Plan), and other supplemental engineering documents. It's always best to also include revision numbers to all documents listed here.
+
+Examples:
+TSSP Rev. 002
+SSP 455P5A3343-203 Rev. C
+PL 45B76801-101 N/C
+
+This is a Conditionally Required field so it may be left blank but preferably 'N/A'.
+''',
+
+    'Form1_Field9': '''
+This is usually the number of the Work Order, Traveler, or Router, but basically it's any document number that provides traceability to the manufacturing record of the FAI part. Other information may be included so you can use more than one line here. The Manufacturing Process Reference is a key element used to support traceability, validation, and compliance in the FAI documentation process. This is a required field so 'N/A' being paced in this field would be incorrect.
+
+Examples:
+304951
+J00071142
+8894456/001
+1188792-01
+''',
+
+    'Form1_Field10': '''
+This is where the companies name goes, the organization responsible for not only making the part but for doing the FAI. Of course this is a required field so 'N/A' is not allowed. Some software packages used for the creation of FAI's auto populate this field.
+
+Examples:
+HANKS FINE METALS
+AERO SPACE PARTS CO. INC.
+GETTER DONE CORP.
+''',
+
+    'Form1_Field11': '''
+The Supplier Code is the number given by the customer to the supplier. Look on the purchase order, that's where you'll almost always find it. It may be labeled or it may not be. The customer is the main aerospace company that wants some company or shop to build the part. The supplier is the company that makes the part and is responsible to complete the FAI. The customer will give the supplier this code and they'll put it on the purchase order.
+
+According to AS9102 Rev. C: This code is optional so it doesn't necessarily have to be there, you could put N/A in Field 11 of Form 1 but most of the time the customer would like that field filled in.
+
+Examples:
+1008792
+003006832
+Q00001122
+''',
+
+    'Form1_Field12': '''
+This is where the purchase order number goes. Most major companies what this filled in, even though it is an optional field according to AS9102. The purchase order has a critical role in establishing traceability. The PO is actually a legal binding document and it should also be one of the documents included in the FAI package.
+
+The purchase order contains the part number, the quantity required, the name of the part, whether the part needs source inspection, and it may also specify if the part is a critical part such as Fracture or Durability critical.
+
+Examples:
+0040602 Line 15
+PO-0012345
+009991 ITEM 6
+N/A
+''',
+
+    'Form1_Field13': '''
+Here we have one of the simplest fields to fill out, the part is either a detail part or an assembly and you must specify, it is a required field according to AS9102 Rev. C.
+''',
+
+    'Form1_Field14': '''
+The FAI is either a Full FAI or a Partial (sometimes called a Delta). This is a required field. If the part is a partial FAI then you need to include the Baseline Part Number along with the revision level.
+
+It is also required that you show the reason for the Full or Partial FAI. Examples would be a lapse in production (over 2 years), a change of location, creating a new CNC program, using a substitute material. (See AS9102 Rev. C. Page 11:f)
+
+Be sure there is documentation that provides traceability for the reason, such as a partial FAI due to an ECN (Engineering Change Notice), you would want the actual notice included in the FAI package.
+''',
+
+    'Form1_Field15': '''
+Note: Fields 15 - 18 consist of a section of data that is only required if the part is an assembly and not a detail part. All the detail parts (and even sub-assemblies) that make this an assembly FAI are listed in Fields 15 - 18. Also, AS9102 Rev. C mentions that Materials and processes that you list on Form 2 don't need to also be here on Form 1 (for an assembly). As an example, let's say you have 'INK' along with all its relative data listed on Form 2, you would not need to list it on Form 1.
+
+This is the Part Number or sub-assembly number that goes into the main assembly, the assembly part number in Field 1 of Form 1. This number can also be standard catalog items or COTS items (Commercial off-the-shelf). Be sure to include the revision number after the part number.
+''',
+
+    'Form1_Field16': '''
+Note: Fields 15 - 18 consist of a section of data that is only required if the part is an assembly and not a detail part. All the detail parts (and even sub-assemblies) that make this an assembly FAI are listed in Fields 15 - 18. Also, AS9102 Rev. C mentions that Materials and processes that you list on Form 2 don't need to also be here on Form 1 (for an assembly). As an example, let's say you have 'INK' along with all its relative data listed on Form 2, you would not need to list it on Form 1.
+
+This is the name or the description of the part that you have listed in Field 15 that goes into the assembly.
+''',
+
+    'Form1_Field17': '''
+Note: Fields 15 - 18 consist of a section of data that is only required if the part is an assembly and not a detail part. All the detail parts (and even sub-assemblies) that make this an assembly FAI are listed in Fields 15 - 18. Also, AS9102 Rev. C mentions that Materials and processes that you list on Form 2 don't need to also be here on Form 1 (for an assembly). As an example, let's say you have 'INK' along with all its relative data listed on Form 2, you would not need to list it on Form 1.
+
+In this field you designate a detail part, a sub-assembly, standard catalog item, a COTS part (Commercial off-the-shelf), or even software. Both 'Standard Catalog Item' and COTS items refer to items that are not custom designed for a specific application, but there is a difference in their usage. Standard Catalog items are things like: fasteners, nuts, bolts, washers, and other regular catalog items. Some examples of COTS on the other hand are electronic components, standard hardware, regular epoxies and adhesives, and things you can buy off the shelf.
+
+Surprisingly, software can be a part of an assembly. When software is a part of the assemblies function, it's considered part of the BOM (Bill of Materials) or Parts List. An example would be a Flight Control Computer (FCC) assembly. The assembly would include parts like printed circuit boards, processors, chips, connectors, enclosures, and the embedded software.
+
+Examples:
+Standard Catalog Item
+COTS (or equivalent)
+FCC Software
+Detail Part
+''',
+
+    'Form1_Field18': '''
+Note: Fields 15 - 18 consist of a section of data that is only required if the part is an assembly and not a detail part. All the detail parts (and even sub-assemblies) that make this an assembly FAI are listed in Fields 15 - 18. Also, AS9102 Rev. C mentions that Materials and processes that you list on Form 2 don't need to also be here on Form 1 (for an assembly). As an example, let's say you have 'INK' along with all its relative data listed on Form 2, you would not need to list it on Form 1.
+
+This Identifier number is for the associated detail parts and associated assemblies that make this an assembly part. This could be the actual FAI number. If a specific FAIR identifier doesn't exist, the company should put their own identifier for the FAI or the approved configuration. This could be a part number, revision level, or even a PO. AS9102 doesn't explicitly prohibit 'N/A' in this field but it's recommended to use the companies identifier instead.
+''',
+
+    'Form1_Field19': '''
+This field contains a 'yes' or 'no' check box. Check the appropriate box. If yes, then that's a good indication that there is documentation along with the FAIR. Look at AS9102 page 10:4.5 to find out more about what AS9102 Rev. C has to show about this. If you've purchased your AS9102 Rev. C. pdf file from sai.org and have installed it here then tap the AS9102 button below and then scroll to page 10.
+''',
+
+    'Form1_Field20': '''
+FAIR Verified By: Legible verification of the person reviewing the FAI from the company that produced the part. On page 9 of AS9102 Rev. C it explains all of the requirements of what to review and verify (Section 4.5/a-d).
+
+Be aware that AS9102 Rev. C states that this field 20, verified by, and field 22, reviewed/approved by, should not be the same person. It's allowable for this field to be filled out electronically using software. Also, this is a required field.
+''',
+
+    'Form1_Field21': '''
+Date when Field 20 (FAIR Verified By) was filled in. This is a required field.
+''',
+
+    'Form1_Field22': '''
+FAIR Reviewed/Approved By: This is readable identification of the person from the company who reviewed and approved the FAIR.
+
+Be aware that AS9102 Rev. C states that this field 22, verified by, and field 22, reviewed/approved by, should not be the same person. Also, this is a required field.
+''',
+
+    'Form1_Field23': '''
+Date when Field 22 (FAIR Reviewed/Approved By) was filled in. This is a required field.
+''',
+
+    'Form1_Field24': '''
+The customer signs here, either electronically or manually, to show that they have reviewed and approved the FAI. This is the point at which the FAI actually gets approved. Because this is the actual last approval, the FAIR must be thoroughly reviewed for errors and all omissions. This is a required field.
+''',
+
+    'Form1_Field25': '''
+Date when Field 24 (Customer Approval) was filled in. This is a required field.
+''',
+
+    'Form1_Field26': '''
+Provide comments and observations here.
+''',
+
+    'Form2_Field1': '''
+This FAI Part Number is a required input. This number must always be the same in Field 1 on Forms 1, 2, and 3. It is a unique identifier assigned to the FAI part. It ties the inspection results to the specific component on the drawing or parts list.
+
+Examples:
+123456
+123-4567-REV-B
+ABX998
+623Q1R3434-302
+
+The drawing number could be different than the part number so be careful. Also, if you make a change to the drawing number on one of the forms, then you have to change it on all the others (1, 2, and 3).    
+''',
+
+    'Form2_Field2': '''
+This field should show the exact name of the FAI part with nothing left out.It should match the PO and most likely many other documents like the Bill of Sale and the name of the part as shown in the engineering documentation. This is another one of those mandatory fields and should not be abbreviated or shortened. Also, most of the time this part name should be in capital letters.
+
+Examples:
+LG HOUSING
+GASKET
+BRACKET, ANGLE
+
+As a reviewer, if you notice that the part name in field 1 on any of the forms is not the same as the parts list or the PO then that is cause for a rejection. Also, if you change or edit the part name, be sure it's the same across all 3 forms.
+''',
+
+    'Form2_Field3': '''
+The serial number uniquely identifies the individual FAI part that was inspected. This input is considered a 'Conditionally Required' one because many times the FAI part doesn't need to have one. One example of when the serial number is a requirement is when the part is 'Fracture Critical Traceable' or possibly another type of critical part. Be sure to carefully read the PO and the parts list to see if you see those designations.
+
+This serial number is also important on the part marking of critical parts, be sure to read the appropriate specification about the part marking because the serial number sometimes has to be marked on the part.
+
+The serial number can be on any part, a detail, an assembly, or a sub-assembly. Some companies require a photo of the part or a stamping on the traveler of the serial number for verification that it was done. And one more thing, if there is a change or your editing in the forms, be sure this serial number is on all 3 Forms in Field 3.
+''',
+
+    'Form2_Field4': '''
+This is the identification number of the First Article Inspection Report (FAIR) itself. Most people just call it 'The FAI number'. This is a required field within AS9102 so it needs to be there, no 'N/A' either.
+
+For the most part, the number is almost always a 4 digit number and you'll rarely see FAI numbers with alphanumeric characters. This field cannot be left blank. This is one of those inputs that reside on all 3 forms in field 4 so if you end up changing it on one form then make sure you change it on the other 2.
+
+Examples:
+1423
+13055
+4021
+''',
+
+    'Form2_Field5': '''
+Input the name of Materials used for the assembly parts and also special processes such as part marking, primers, chemical conversion, sealants, topcoats, and adhesives. 
+
+Examples:
+7050-T7451 Aluminum Alloy Plate
+BORIC ACID - SULFURIC ACID ANODIZING
+PART MARK
+TOP COAT (TOUCH-UP) MIL-PRF-88442 COLOR 1234
+ADHESIVE TYPE 1
+''',
+
+    'Form2_Field6': '''
+Every material used to make the part has a specification and it needs to be in this field. Try to always put the revision designation after the specification and be sure it matches all other fields and documents.
+
+It can get a little confusing about listing Commercial off-the-shelf (COTS) parts in this field. You list the modified parts here in this field and the non-modified parts on Form 1.
+
+Examples:
+BAC5307 REV AB
+PS20822 REV D
+299-947-521
+''',
+
+    'Form2_Field7': '''
+List the Finish or Process code here. These codes are used when a company assigns a code to a special process or finish and if not, the field can be left blank but it's better to use 'N/A'. Some smaller companies may not use codes for their processes but companies like Boeing do.
+
+Boeing's main specification for these codes is: D1-4426 - Approved Process Sources. If needed, always keep the specification available for viewing such as a short cut on your desktop. Be sure to check company requirements to see if there is a specification for these codes.
+
+Examples:
+H304 - Anodizing Aluminum
+M319
+616 - 7050 Ingot
+''',
+
+    'Form2_Field8': '''
+This field is for the company that performed the process and or provided the material. Enter the full name of the company that supplied the material or performed the special process. Input Name, Street Address, City, State, Zip and Country if outside the USA. A customer assigned 'Supplier Code' can also be added in this field.
+
+The name as it appears on the Certificate of Conformance or Process Certification should match the name(s) in this field. If there's more than one supplier involved for the same item then some clarification will need to be done, documents may have been mixed up or added to the FAI that don't belong there. Many times, all process are done by the same company. Even though this is a 'Conditionally Required' field, it still should be filled out. If this field is blank or 'N/A' then be sure to know the reason why.
+
+Examples:
+World Wide Heat Treat
+1234 Earth St.
+Wichita, KS
+67216
+''',
+
+    'Form2_Field9': '''
+Enter 'Yes' in this field if the process or material is approved by the company. Enter 'No' if the company requires approval but the people that did the process are not approved. You enter 'N/A' if approval is not required.
+
+As an example, Boeing has the specification: D1-4425 which is actually a website page at Boeing and one section of it contains Approved Processors. An FAI creator or reviewer doing Boeing FAI's would always want this specification link available as a shortcut in their browser tab.
+
+If there is a 'No' in this field, then that is an indication that a Nonconformance is contained in the FAI.
+
+Examples: Yes, No, 'N/A'
+''',
+
+    'Form2_Field10': '''
+You should find the Certificate of Conformance (CofC) document in with all the other documents contained in the FAI. Find the proper document and be sure that all the information is correct: The material or process name, spec. number, suppliers name and address, basically all the information that should be filled out in a column of Form 2 is within this document. Make sure that the Certificate of Conformance number on the document matches what is in this field.
+
+A Certificate of Conformance is a statement from the supplier or process provider that confirms the delivered product or service meets all requirements. Sometimes you'll see the words 'Certificate of Compliance' also.
+
+Examples:
+PO: 61356 CC: W34125
+BATCH: 56712513FE
+JOB: 3412 FAI
+''',
+
+    'Form2_Field11': '''
+Some characteristics of the part require functional testing to verify performance, not just dimensional or visual checks. If a functional test procedure is called out as a design requirement then complete this Field. Enter the procedure number, test method ID, or document reference used. If no functional testing applies, then you can enter 'N/A' or 'Not Required', it also can be left blank.
+''',
+
+    'Form2_Field12': '''
+This field is where the certification number from the test procedure goes. The Acceptance Report is a document that shows the part or process passed inspection or testing. If there's more than one report, list the one specific to this row. You can enter 'N/A' if no data exists or leave it blank.
+''',
+
+    'Form2_Field13': '''
+This is a text space for any comments you might like to make about certain things pertaining to Form 2. Add any information that would help understand inspection results and or approval status. You can add things like conditions, deviations, clarifications, and you can also reference other documents within the FAI. Question anything that might be questionable or cause traceability issues.
+''',
+
+    'Form3_Field1': '''
+This FAI Part Number is a required input. This number must always be the same in Field 1 on Forms 1, 2, and 3. It is a unique identifier assigned to the FAI part. It ties the inspection results to the specific component on the drawing or parts list.
+
+Examples:
+123456
+123-4567-REV-B
+ABX998
+623Q1R3434-302
+
+The drawing number could be different than the part number so be careful. Also, if you make a change to the drawing number on one of the forms, then you have to change it on all the others (1, 2, and 3).    
+''',
+
+    'Form3_Field2': '''
+This field should show the exact name of the FAI part with nothing left out.It should match the PO and most likely many other documents like the Bill of Sale and the name of the part as shown in the engineering documentation. This is another one of those mandatory fields and should not be abbreviated or shortened. Also, most of the time this part name should be in capital letters.
+
+Examples:
+LG HOUSING
+GASKET
+BRACKET, ANGLE
+
+As a reviewer, if you notice that the part name in field 1 on any of the forms is not the same as the parts list or the PO then that is cause for a rejection. Also, if you change or edit the part name, be sure it's the same across all 3 forms.
+''',
+
+    'Form3_Field3': '''
+The serial number uniquely identifies the individual FAI part that was inspected. This input is considered a 'Conditionally Required' one because many times the FAI part doesn't need to have one. One example of when the serial number is a requirement is when the part is 'Fracture Critical Traceable' or possibly another type of critical part. Be sure to carefully read the PO and the parts list to see if you see those designations.
+
+This serial number is also important on the part marking of critical parts, be sure to read the appropriate specification about the part marking because the serial number sometimes has to be marked on the part.
+
+The serial number can be on any part, a detail, an assembly, or a sub-assembly. Some companies require a photo of the part or a stamping on the traveler of the serial number for verification that it was done. And one more thing, if there is a change or your editing in the forms, be sure this serial number is on all 3 Forms in Field 3.
+''',
+
+    'Form3_Field4': '''
+This is the identification number of the First Article Inspection Report (FAIR) itself. Most people just call it 'The FAI number'. This is a required field within AS9102 so it needs to be there, no 'N/A' either.
+
+For the most part, the number is almost always a 4 digit number and you'll rarely see FAI numbers with alphanumeric characters. This field cannot be left blank. This is one of those inputs that reside on all 3 forms in field 4 so if you end up changing it on one form then make sure you change it on the other 2.
+
+Examples:
+1423
+13055
+4021
+''',
+
+    'Form3_Field5': '''
+This is the number that goes along with a Bubble or Balloon (a circle is better than a square) that is notated on a Drawing characteristic, Parts List, Notes List, SSP, Fastener File, Purchase Order, basically any characteristic that needs to exist in order to show traceability for part creation.
+
+Examples:
+1
+Bubble #1
+Op #20
+7
+Bubble #11.2
+Op #'N/A'
+
+Be sure that the actual ballooned number on the drawing is legible and doesn't cover up any dimensions that are shown. An initial part of an FAI review is to be sure that each 'Char. No.' matches what is shown on the drawings and other documents.
+''',
+
+    'Form3_Field6': '''
+This field provides the location to where you can find the referenced characteristic. The information in this field should lead you to the exact document that shows the Bubble number and the note or dimensional characteristic. This field needs to contain the document number, the drawing zone number (B3) the page number (Pg.6 of 12), and even the revision number.
+
+Examples:
+9M8010 REV B, PAGE 6 of 6
+MBD & PL
+215-040-202-343 PL:3:C4
+PL REV 002, SHT 1
+
+If the characteristic location extends beyond a single zone on the drawing then list the range of the zone. An Example would be: 3C2/C3.
+''',
+
+    'Form3_Field7': '''
+This is a number or designation for special requirements. If the item requires additional design or process control requirements you can use this field. Be aware that this is the least used Field on Form 3, you almost always will see 'N/A' in this Field. This identifier is defined by the customer and it is conditionally required.
+''',
+
+    'Form3_Field8': '''
+This is the requirement for the design characteristic. It could be a note, a dimension, a material, tolerances, a drawing, and many other descriptions and or requirements. This particular Field along with others on Form 3 are where the highest errors occur within FAI's. Check for company wide requirements, training materials, checklists, and possibly other specifications for filling out not only these Form 3 fields but for all Forms if possible. Obtain those requirements and put notes here in FAI Assistant for reference.
+
+Be sure the requirements are recorded with the same units as the drawing (inch/metric). Every note listed on the Parts List usually is required here. Flag Notes from drawings also must be listed.
+
+If a measurement applies to multiple locations, such as: Radius 10x (0.000 to +0.015) then it can be recorded in one column, when this happens you will need to show a 2 place range result (Field 9) or list 10 places (as an example). Some company requirements may allow a 'Pass' in Field 9 for this example but for traceability purposes it is better to show actual dimensions.
+
+Examples:
+Position 6x (<= 0.005) in
+Thickness (0.160 +/- 0.010) in
+Specification B-D-44556, Class 2
+805 (MBD-003) Unless other wise noted...
+Length 2.5
+WEIGHT
+
+Clearly show the target values and allowable limits for the characteristic just like it's written in the engineering drawing, the model, and/or the specification. This field is the "rule" against which results will be compared.
+''',
+
+    'Form3_Field9': '''
+Among all the fields in AS9102 Rev. C, this one contains the most detailed instructions on what is required. Because of its complexity and the amount of information involved, it is also the field where the most mistakes are made. Careful attention to the specification and accurate transcription of requirements are essential to avoid errors here.
+
+This field is where you list the actual measurement using the same number of decimal places as the drawing shows. This type of result is called variable data. Results may also be pass or fail checks, that is called attribute data. You use pass or fail if there is no way to physically check or take a measurement.
+
+Attribute data, such as a pass or fail result, can be recorded instead of a numerical measurement when it is not practical to get variable data. This usually applies when designated or qualified tooling is used to inspect the feature, and that tooling functions as a go/no-go gauge for the specific characteristic. In these cases, the inspection outcome is simply recorded as acceptable or not acceptable, rather than as a measured value.
+
+Some notes in the parts list can be verified with attribute data, while others require variable data. For example, a note such as “Note (521) Unless otherwise noted, all sealing shall be done using BMD-56 sealant” can be inspected with a simple pass/fail result. In contrast, a note like “Edge break all fastener holes 0.005 to 0.015 per BDS8867 prior to pre-penetrant etch” specifies a measurable range, which requires an actual measurement that is recorded and traceable — meaning variable data is needed.
+
+There are many more scenarios that can take place in the Results field so be sure to read the actual specification on page 21 and 22 of AS9102 Rev. C. Also, check with your company for training materials, cheat and check sheets. Also remember that you can take a note above here in FAI Assistant by long pressing on the title at the top in order to give you a speedy reference.
+''',
+
+    'Form3_Field10': '''
+MEANING:
+This indicates whether special tooling was required and used for inspection.
+
+WHAT THIS FIELD IS ASKING:
+Was designed or qualified tooling used to inspect this feature?
+
+EXAMPLES OF VALID INPUT:
+- Yes - Fixture ID 002
+- No
+- Gage #157
+
+COMMON MISTAKES (Avoid these):
+- Always putting 'No' without checking
+- Missing tooling ID
+- Saying 'Yes' without reference
+
+TIPS:
+Refer to planning documents or control plan to verify if special tooling was used.
+''',
+
+    'Form3_Field11': '''
+MEANING:
+If the characteristic does not meet the requirement, this is the tracking number for the nonconformance report.
+
+WHAT THIS FIELD IS ASKING:
+Was there a nonconformance? If so, what is the tracking number?
+
+EXAMPLES OF VALID INPUT:
+- NC-8456
+- QDR-0042
+- MRB-2025-18
+
+COMMON MISTAKES (Avoid these):
+- Entering 'No' or 'None'
+- Leaving blank when there's a rejection
+- Untraceable number
+
+TIPS:
+Only use if the result does not conform. Reference the actual NCR or MRB document.
+''',
+
+    'Form3_Field12': '''
+MEANING:
+Optional space for relevant notes such as environmental conditions, inspection notes, or clarifications.
+
+WHAT THIS FIELD IS ASKING:
+Is there any other information relevant to this inspection result?
+
+EXAMPLES OF VALID INPUT:
+- Measured at 23°C
+- Verified by alternate method
+- Inspected on 2nd shift
+
+COMMON MISTAKES (Avoid these):
+- Overloading with unrelated info
+- Blank when clarification is useful
+- Acronyms with no explanation
+
+TIPS:
+Use this field to clarify anything that could raise questions during review.
+''',
+
+  };
+}

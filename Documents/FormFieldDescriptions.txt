@@ -1,0 +1,54 @@
+
+
+Form 1: Field 3: Serial Number
+Form 1: Field 4: FAI Identifier
+Form 1: Field 5: Part Revision Level
+Form 1: Field 6: Drawing Number
+Form 1: Field 7: Drawing Revision Level
+Form 1: Field 8: Additional Changes
+Form 1: Field 9: Manufacturing Process Reference
+Form 1: Field 10: Organization Name
+Form 1: Field 11: Supplier Code
+Form 1: Field 12: PO Number
+Form 1: Field 13: Detail or Assembly FAI
+Form 1: Field 14: Full or Partial FAI
+(Form 1 Fields 15 - 18 are in the index of part numbers or sub-assembly numbers section)
+Form 1: Field 15: Part Number
+Form 1: Field 16: Part Name 
+Form 1: Field 17: Part Type
+Form 1: Field 18: FAIR Identifier
+Form 1: Field 19: Documented Nonconformance(s)?
+Form 1: Field 20: FAIR verified by
+Form 1: Field 21: Date
+Form 1: Field 22: Reviewed/Approved by
+Form 1: Field 23: Date
+Form 1: Field 24: Customer Approval
+Form 1: Field 25: Date
+Form 1: Field 26: Comments
+Field 2: Field 1: Part Number
+Field 2: Field 2: Part Name
+Field 2: Field 3: Serial Number
+Field 2: Field 4: FAI Identifier
+Field 2: Field 5: Material or Process Name
+Field 2: Field 6: Specification Number
+Field 2: Field 7: Code
+Field 2: Field 8: Supplier
+Field 2: Field 9: Customer Approval Verification
+Field 2: Field 10: Certificate of Conformance Number
+Field 2: Field 11: Functional Test Procedure Number
+Field 2: Field 12: Acceptance Report Number
+Field 2: Field 13: Comments
+Field 3: Field 1: Part Number
+Field 3: Field 2: Part Name
+Field 3: Field 3: Serial Number
+Field 3: Field 4: FAIR Identifier
+Field 3: Field 5: Char. No.
+Field 3: Field 6: Reference Location
+Field 3: Field 7: Characteristic Designator
+Field 3: Field 8: Requirement
+Field 3: Field 9: Results
+Field 3: Field 10: Designed/Qualified Tooling
+Field 3: Field 11: Nonconformance Number
+Field 3: Field 12: Additional Data/Comments
+
+

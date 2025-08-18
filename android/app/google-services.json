@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "434057576933",
+    "project_id": "fai-assistant",
+    "storage_bucket": "fai-assistant.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:434057576933:android:35bc625f59fab4978eef0c",
+        "android_client_info": {
+          "package_name": "com.example.fai_assistant"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1-E_BgETRQWhCERnIqi_giymwre315Hw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
