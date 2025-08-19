@@ -1,11 +1,48 @@
+# Flutter / Dart
 .dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+pubspec.lock
+
+# Build outputs
 build/
 ios/Pods/
+windows/
+linux/
+macos/
+
+# IDE settings
 .idea/
 .vscode/
-*.mp4
-*.zip
+*.iml
+
+# Logs & temp
+*.log
+*.tmp
+
+# Binaries
 *.apk
 *.ipa
-*.iml
-*.log
+*.exe
+*.dll
+*.so
+*.dylib
+*.zip
+*.tar.gz
+
+# Media (optional, remove if you want to commit images/videos)
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.psd
+
+# Environment & secrets
+.env
+.env.*
+firebase_options.dart
