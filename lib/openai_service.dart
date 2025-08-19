@@ -1,12 +1,16 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class OpenAIService {
-//  static const _apiKey = 'YOUR_SECRET_API_KEY_HERE'; // Replace with your actual key
-  static const _apiKey = 'OPENAI_API_KEY_REMOVED'; // Replace with your actual key
+  static final _apiKey = dotenv.env['OPENAI_API_KEY'] ?? '';  // 🔑 from .env
   static const _endpoint = 'https://api.openai.com/v1/chat/completions';
 
   static Future<String> getAIAnswer(String prompt) async {
+    if (_apiKey.isEmpty) {
+      return '❌ Error: Missing API key. Did you create a .env file and add OPENAI_API_KEY=...?';
+    }
+
     final response = await http.post(
       Uri.parse(_endpoint),
       headers: {

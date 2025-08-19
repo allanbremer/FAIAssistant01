@@ -28,6 +28,7 @@ dependencies:
   http: ^0.13.6
   flutter_linkify: ^6.0.0
   uuid: ^4.4.0
+  flutter_dotenv: ^5.2.1
 
 dev_dependencies:
   flutter_test:
@@ -50,6 +51,7 @@ flutter:
     - assets/fonts/DejaVuSans.ttf
     - assets/fonts/DejaVuSans-Bold.ttf
     - assets/fonts/NotoSansSymbols2-Regular.ttf
+    - .env
 
 # ⬇️ THIS SHOULD BE OUTSIDE 'flutter:' SECTION
 flutter_launcher_icons:
